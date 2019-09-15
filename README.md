@@ -47,3 +47,4 @@ app.listen(3003, () => {
 - and separate our request for particular usage
 const router = require('./routes/user.js')
 app.use(router)
+
