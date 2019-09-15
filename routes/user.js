@@ -2,8 +2,9 @@
 const express = require('express')
 const mysql = require('mysql')
 const router = express.Router()
-router.get('/messages', (req, res) => {
-  console.log("1111Show some messages or whatever...")
+
+router.get('/test', (req, res) => {
+  console.log("Show some messages or whatever...")
   res.end()
 })
 
@@ -66,6 +67,7 @@ router.get('/user/:id', (req, res) => {
   })
 })
 
+// create pool connection to database
 const pool = mysql.createPool({
   connectionLimit: 10,
   host: 'localhost',
@@ -78,4 +80,5 @@ function getConnection() {
   return pool
 }
 
+//export module router
 module.exports = router

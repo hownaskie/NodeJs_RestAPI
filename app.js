@@ -2,7 +2,6 @@
 const express = require('express')
 const app = express()
 const morgan = require('morgan')
-const mysql = require('mysql')
 const bodyParser = require('body-parser')
 
 app.use(bodyParser.urlencoded({extented: false}))
@@ -14,6 +13,7 @@ app.get('/', (req, res) => {
   res.send("Hello from ROOOOT")
 })
 
+//use user.js file as our router for user request
 const router = require('./routes/user.js')
 app.use(router)
 
